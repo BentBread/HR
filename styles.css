@@ -24,8 +24,8 @@ body, html {
     max-width: 80%;
 }
 .location-date {
-    font-size: 0.7em; /* smaller text */
-    color: #9e9999;
+    font-size: 0.5em; /* smaller text */
+    color: #777;
     margin-bottom: 10px;
 }
 .description {
