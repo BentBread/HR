@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HoneyRise Website</title>
+    <title>The HoneyRise Corporation</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,7 +13,7 @@
                 <p><!-- company description goes here --></p>
             </div>
             <div class="container">
-                <h2 class="section-title">HoneyRise Locations</h2>
+                <h2 class="section-title">The HoneyRise Corporation</h2>
                 <ul class="locations">
                     <li class="location-box">
                         <div class="image-box">
@@ -27,15 +27,29 @@
                             <button class="toggle-menu" onclick="toggleMenu('menu1')">Toggle Menu</button>
                         </div>
                         <ul class="menu" id="menu1">
-                            <li>Honey - 1 Diamond</li>
-                            <li>Potion of the Turle Master II x3 - 1 netherite ingot</li>
-                            <li>Strength Potion - 3 Diamonds</li>
-                            <li>More to come</li>
+                            <li>Honey - 3 Emeralds</li>
+                            <li>Potion of the Turle Master II x3 - 1 netherite ingot or 192 Emeralds</li>
+                            <li>Strength Potion - 10 Emeralds</li>
                         </ul>
                     </li>
                     <li class="location-box">
                         <div class="image-box">
-                            <img src="location2.jpg" alt="Location 2"> <!-- example image -->
+                            <img src="bunker.png" alt="HoneyRise Oasis"> <!-- example image -->
+                        </div>
+                        <div class="location-info">
+                            <span class="location-title">HoneyRise Oasis</span>
+                            <span class="location-details">Obsidian locked bunker located in Rivendell</span>
+                            <span class="location-date">First Opened 4/15/2024</span>
+                            <button class="status-button status-active">Active</button>
+                            <button class="toggle-menu" onclick="toggleMenu('menu5')">Toggle Menu</button>
+                        </div>
+                        <ul class="menu" id="menu5">
+                            <li>Villager - 64 Emeralds *more may be added if transportation is needed</li>
+                        </ul>
+                    </li>
+                    <li class="location-box">
+                        <div class="image-box">
+                            <img src="location2.jpg" alt="Empty"> <!-- example image -->
                         </div>
                         <div class="location-info">
                             <span class="location-title">HoneyRise Hotel</span>
@@ -50,7 +64,7 @@
                     </li>
                     <li class="location-box">
                         <div class="image-box">
-                            <img src="location2.jpg" alt="Location 2"> <!-- example image -->
+                            <img src="location2.jpg" alt="Empty"> <!-- example image -->
                         </div>
                         <div class="location-info">
                             <span class="location-title">HoneyRise Trading Outpost 1</span>
@@ -60,8 +74,14 @@
                             <button class="toggle-menu" onclick="toggleMenu('menu3')">Toggle Menu</button>
                         </div>
                         <ul class="menu" id="menu3">
-                            <li>Eventually Villager Trade Items - 0</li>
+                            <li class="villagerItem">Eventually Villager Trade Items - 0</li>
                         </ul>
+                    </li>
+                    <li class="info-box">
+                        <div class="location-info">
+                            <span class="info">To buy an item highlighted in purple, visit the establishment and purchase it from a villager.</span>
+                            <span class="info">To buy any other item, contact Bent___Bread on discord or in game.</span>
+                        </div>
                     </li>
                     <!-- Add more locations as needed -->
                 </ul>
@@ -71,3 +91,4 @@
     <script src="script.js"></script>
 </body>
 </html>
+
