@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HoneyRise Resource Company</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background">
+        <div class="overlay">
+            <div class="description">
+                <p><!-- company description goes here --></p>
+            </div>
+            <div class="container">
+                <h2 class="section-title">HoneyRise Locations</h2>
+                <ul class="locations">
+                    <li class="location-box">
+                        <div class="image-box">
+                            <img src="honeyrisebar.png" alt="HoneyRise Bar 2.0"> <!-- example image -->
+                        </div>
+                        <div class="location-info">
+                            <span class="location-title">HoneyRise Bar 2.0</span>
+                            <span class="location-details">Located in Rivendell</span>
+                            <button class="status-button status-active">Active</button>
+                            <button class="toggle-menu" onclick="toggleMenu('menu1')">Toggle Menu</button>
+                        </div>
+                        <ul class="menu" id="menu1">
+                            <li>Honey - 1 Diamond</li>
+                            <li>Potion of the Turle Master II x3 - 1 netherite ingot</li>
+                            <li>Strength Potion - 3 Diamonds</li>
+                            <li>More to come</li>
+                        </ul>
+                    </li>
+                    <li class="location-box">
+                        <div class="image-box">
+                            <img src="location2.jpg" alt="Location 2"> <!-- example image -->
+                        </div>
+                        <div class="location-info">
+                            <span class="location-title">HoneyRise Hotel</span>
+                            <span class="location-details">Looking for location</span>
+                            <button class="status-button status-inactive">Inactive</button>
+                            <button class="toggle-menu" onclick="toggleMenu('menu2')">Toggle Menu</button>
+                        </div>
+                        <ul class="menu" id="menu2">
+                            <li>Nothing Yet - 0</li>
+                        </ul>
+                    </li>
+                    <li class="location-box">
+                        <div class="image-box">
+                            <img src="location2.jpg" alt="Location 2"> <!-- example image -->
+                        </div>
+                        <div class="location-info">
+                            <span class="location-title">HoneyRise Trading Outpost 1</span>
+                            <span class="location-details">Looking for location</span>
+                            <button class="status-button status-inactive">Inactive</button>
+                            <button class="toggle-menu" onclick="toggleMenu('menu3')">Toggle Menu</button>
+                        </div>
+                        <ul class="menu" id="menu3">
+                            <li>Eventually Villager Trade Items - 0</li>
+                        </ul>
+                    </li>
+                    <!-- Add more locations as needed -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
