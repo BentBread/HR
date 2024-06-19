@@ -15,6 +15,9 @@ body, html {
     display: flex;
     justify-content: center;
 }
+.villagerItem {
+    color:#A020F0
+}
 
 .overlay {
     background-color: rgba(255, 255, 255, 0.8); /* semi-transparent white */
@@ -24,8 +27,8 @@ body, html {
     max-width: 80%;
 }
 .location-date {
-    font-size: 0.5em; /* smaller text */
-    color: #777;
+    font-size: 0.7em; /* smaller text */
+    color: #9e9999;
     margin-bottom: 10px;
 }
 .description {
@@ -53,6 +56,18 @@ body, html {
 }
 
 .location-box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.info-box {
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -94,6 +109,11 @@ body, html {
 }
 
 .location-details {
+    font-size: 1em; /* smaller text */
+    color: #777;
+    margin-bottom: 10px;
+}
+.info {
     font-size: 1em; /* smaller text */
     color: #777;
     margin-bottom: 10px;
@@ -143,3 +163,4 @@ body, html {
 .menu li:last-child {
     border-bottom: none;
 }
+
