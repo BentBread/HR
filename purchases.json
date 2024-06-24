@@ -1,33 +1,3 @@
 {
-    "purchases": [
-        {
-            "buyer": "Test",
-            "item_name": "TestItem1",
-            "amount": 1,
-            "price": "6",
-            "instant": false,
-            "instant_text": "",
-            "seller": "Bent___Bread"
-        },
-        {
-            "buyer": "Test",
-            "item_name": "Test6",
-            "amount": 4,
-            "price": "6",
-            "instant": true,
-            "instant_text": "111",
-            "seller": "Bent___Bread",
-            "timestamp": "2024-06-24 15:24:09"
-        },
-        {
-            "buyer": "Test",
-            "item_name": "TestMultiple",
-            "amount": 1,
-            "price": "stone",
-            "instant": true,
-            "instant_text": "cords 111",
-            "seller": "Bent___Bread",
-            "timestamp": "2024-06-24 15:28:56"
-        }
-    ]
+    "purchases": []
 }
