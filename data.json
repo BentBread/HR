@@ -1,0 +1,27 @@
+{
+    "users": [
+        {
+            "nation": "HoneyRise",
+            "username": "Bent___Bread",
+            "password": "Dillon122"
+        },
+        {
+            "nation": "Test",
+            "username": "Test",
+            "password": "Test"
+        }
+    ],
+    "items": [
+        {
+            "item_name": "Test6",
+            "item_price": [
+                "6"
+            ],
+            "item_nation": "HoneyRise",
+            "username": "Bent___Bread",
+            "item_amount": 2,
+            "instant": true,
+            "instant_text": "111"
+        }
+    ]
+}

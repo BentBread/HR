@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2 class="section-title">Marketplace</h2>
+<div id="items-container" class="item-container">
+    {% for item in items %}
+    <div class="small-info-box">
+        <div class="location-info">
+            <h3 class="location-title">{{ item['item_name'] }}</h3>
+            <p class="location-details">Seller: {{ item['username'] }}</p>
+            <p class="location-details">Seller Association: {{ item['item_nation'] }}</p>
+            <p class="location-details">Price:
+                <select id="price-{{ loop.index }}">
+                    {% for price in item['item_price'] %}
+                    <option>{{ price }}</option>
+                    {% endfor %}
+                </select>
+            </p>
+            <p class="location-details">Quantity: {{ item['item_amount'] }}</p>
+            {% if item['instant'] %}
+            <p class="instant-tag">Instant</p>
+            {% endif %}
+            {% if item['username'] != session['username'] %}
+            <form method="POST" action="{{ url_for('buy_item') }}" class="buy-form">
+                <input type="hidden" name="item_name" value="{{ item['item_name'] }}">
+                <input type="number" name="amount" placeholder="Quantity" required min="1" max="{{ item['item_amount'] }}" class="input-field">
+                <input type="hidden" name="price" id="hidden-price-{{ loop.index }}">
+                <button type="submit" class="buy-button">Buy</button>
+            </form>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<script>
+    document.querySelectorAll('.buy-form').forEach((form, index) => {
+        form.onsubmit = function() {
+            const priceSelect = document.getElementById(`price-${index + 1}`);
+            const hiddenPrice = document.getElementById(`hidden-price-${index + 1}`);
+            hiddenPrice.value = priceSelect.value;
+        };
+    });
+</script>
+{% endblock %}

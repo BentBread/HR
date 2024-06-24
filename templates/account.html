@@ -1,0 +1,130 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="account-container">
+    <h2 class="section-title">Account Information</h2>
+    <div class="account-info">
+        <p><strong>Username:</strong> {{ user.username }}</p>
+        <p><strong>Nation:</strong> {{ user.nation }}</p>
+        <p><strong>Password:</strong> <span id="password-field">******</span> <button id="reveal-password-btn" class="reveal-button">Reveal Password</button></p>
+        <a href="{{ url_for('update_account') }}" class="update-button">Update Account Info</a>
+    </div>
+
+    <h2 class="section-title">Your Listings</h2>
+    <div id="user-items-container" class="item-container">
+        {% for item in items %}
+        <div class="small-info-box">
+            <div class="location-info">
+                <h3 class="location-title">{{ item['item_name'] }}</h3>
+                <p class="location-details">Price:
+                    <select>
+                        {% for price in item['item_price'] %}
+                        <option>{{ price }}</option>
+                        {% endfor %}
+                    </select>
+                </p>
+                <p class="location-details">Quantity: {{ item['item_amount'] }}</p>
+                <p class="location-details">Seller: {{ item['username'] }}</p>
+                <p class="location-details">Seller Association: {{ item['item_nation'] }}</p>
+                {% if item['instant'] %}
+                <p class="instant-tag">Instant</p>
+                {% endif %}
+                <form method="POST" action="{{ url_for('delete_item', item_name=item['item_name']) }}" class="delete-form">
+                    <button type="submit" class="delete-button">Delete Item</button>
+                </form>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <h2 class="section-title">Purchase History</h2>
+    <div id="user-purchases-container" class="container">
+        {% for purchase in purchases %}
+        <div class="small-purchase-box">
+            <p><strong>Item Name:</strong> {{ purchase['item_name'] }}</p>
+            <p><strong>Quantity:</strong> {{ purchase['amount'] }}</p>
+            <p><strong>Price:</strong> {{ purchase['price'] }}</p>
+            <p><strong>Seller:</strong> {{ purchase['seller'] }}</p>
+            <p><strong>Date:</strong> {{ purchase['timestamp'] }}</p>
+            {% if purchase['instant'] %}
+            <p class="instant-info">This was an instant order. Instant information: {{ purchase['instant_text'] }}, you must provide payment to the seller</p>
+            {% else %}
+            <p class="normal-info">This is not an instant order. The seller should have reached out to you. If not, contact a HoneyRise employee.</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+
+    <h2 class="section-title">Sales History</h2>
+    <div id="user-sales-container" class="container">
+        {% for sale in sales %}
+        <div class="small-purchase-box">
+            <p><strong>Item Name:</strong> {{ sale['item_name'] }}</p>
+            <p><strong>Quantity:</strong> {{ sale['amount'] }}</p>
+            <p><strong>Price:</strong> {{ sale['price'] }}</p>
+            <p><strong>Buyer:</strong> {{ sale['buyer'] }}</p>
+            <p><strong>Date:</strong> {{ sale['timestamp'] }}</p>
+            {% if sale['instant'] %}
+            <p class="instant-info">This was an instant order. Instant text: {{ sale['instant_text'] }}, make sure you recieve payment</p>
+            {% else %}
+            <p class="normal-info">You as the seller should have reached out to the buyer to complete the sale.</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+
+    <h2 class="section-title">List New Item</h2>
+    <form method="POST" action="{{ url_for('add_item') }}" class="add-item-form">
+        <input type="text" name="item_name" placeholder="Item Name" required class="input-field">
+        <div id="price-container">
+            <input type="text" name="item_price[]" placeholder="Item Price" required class="input-field">
+        </div>
+        <button type="button" id="add-price-btn" class="add-price-button">Add payment option</button>
+        <input type="number" name="item_amount" placeholder="Quantity" required class="input-field">
+        <div class="instant-checkbox">
+            <label for="instant">Make instant sale</label>
+            <input type="checkbox" id="instant" name="instant" onchange="toggleInstantText()">
+        </div>
+        <div id="instant-text-container" style="display:none;">
+            <input type="text" name="instant_text" id="instant_text" placeholder="Cords or item retrieval information" class="input-field">
+        </div>
+        <button type="submit" class="add-button">Put Item For Sale</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById('add-price-btn').onclick = function() {
+        const priceContainer = document.getElementById('price-container');
+        const newPriceInput = document.createElement('input');
+        newPriceInput.type = 'text';
+        newPriceInput.name = 'item_price[]';
+        newPriceInput.placeholder = 'Item Price';
+        newPriceInput.required = true;
+        newPriceInput.classList.add('input-field');
+        priceContainer.appendChild(newPriceInput);
+    };
+
+    document.getElementById('reveal-password-btn').onclick = function() {
+        const passwordField = document.getElementById('password-field');
+        const button = document.getElementById('reveal-password-btn');
+        if (passwordField.textContent === '******') {
+            passwordField.textContent = "{{ user.password }}";
+            button.textContent = "Hide Password";
+        } else {
+            passwordField.textContent = '******';
+            button.textContent = "Reveal Password";
+        }
+    };
+
+    function toggleInstantText() {
+        const instantCheckbox = document.getElementById('instant');
+        const instantTextContainer = document.getElementById('instant-text-container');
+        if (instantCheckbox.checked) {
+            instantTextContainer.style.display = 'block';
+            document.getElementById('instant_text').required = true;
+        } else {
+            instantTextContainer.style.display = 'none';
+            document.getElementById('instant_text').required = false;
+        }
+    }
+</script>
+{% endblock %}

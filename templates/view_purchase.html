@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2 class="section-title">Purchase Information</h2>
+<div class="purchase-info">
+    <p><strong>Item Name:</strong> {{ item_name }}</p>
+    <p><strong>Amount:</strong> {{ amount }}</p>
+    <p><strong>Price:</strong> {{ price }}</p>
+    {% if instant %}
+    <p class="instant-info">This is an instant order, the seller details on instant fulfillment are located below, you must provide payment to the seller at the item location unless specified otherwise. If the instant information is not good, please reach out to a HoneyRise employee.</p>
+    <p><strong>Instant Text:</strong> {{ instant_text }}</p>
+    {% else %}
+    <p class="normal-info">The seller should reach out to you with information shortly, if they do not contact a HoneyRise employee.</p>
+    {% endif %}
+</div>
+{% endblock %}

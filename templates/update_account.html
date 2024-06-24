@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Update Account Info</h2>
+<form method="POST" action="{{ url_for('update_account') }}">
+    <input type="text" name="new_nation" value="{{ user.nation }}" required>
+    <input type="text" name="new_username" value="{{ user.username }}" required>
+    <button type="submit">Update Info</button>
+</form>
+{% endblock %}

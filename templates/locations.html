@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+{% endblock %}
+{% block content %}
+    <div class="background-locations">
+        <div class="overlay-locations">
+            <div class="description-locations">
+                <p><!-- company description goes here --></p>
+            </div>
+            <div class="container-locations">
+                <h2 class="section-title-locations">The HoneyRise Corporation</h2>
+                <ul class="locations-list">
+                    <li class="location-box-locations">
+                        <div class="image-box-locations">
+                            <img src="{{ url_for('static', filename='honeyrisebar.png') }}" alt="HoneyRise Bar 2.0"> <!-- example image -->
+                        </div>
+                        <div class="location-info-locations">
+                            <span class="location-title-locations">HoneyRise Bar 2.0</span>
+                            <span class="location-details-locations">Located in Rivendell</span>
+                            <span class="location-date-locations">First Opened 6/19/2024</span>
+                            <button class="status-button-locations status-active-locations">Active</button>
+                            <button class="toggle-menu-locations" onclick="toggleMenu('menu1')">Toggle Menu</button>
+                        </div>
+                        <ul class="menu-locations" id="menu1">
+                            <li>Honey - 3 Emeralds</li>
+                        </ul>
+                    </li>
+                    <li class="location-box-locations">
+                        <div class="image-box-locations">
+                            <img src="{{ url_for('static', filename='oasis.png') }}" alt="HoneyRise Oasis"> <!-- example image -->
+                        </div>
+                        <div class="location-info-locations">
+                            <span class="location-title-locations">HoneyRise Oasis</span>
+                            <span class="location-details-locations">Obsidian locked bunker located in Rivendell</span>
+                            <span class="location-date-locations">First Opened 4/15/2024</span>
+                            <button class="status-button-locations status-active-locations">Active</button>
+                            <button class="toggle-menu-locations" onclick="toggleMenu('menu5')">Toggle Menu</button>
+                        </div>
+                        <ul class="menu-locations" id="menu5">
+                            <li>Closed to the public</li>
+                        </ul>
+                    </li>
+                    <li class="location-box-locations">
+                        <div class="image-box-locations">
+                            <img src="{{ url_for('static', filename='location2.jpg') }}" alt="Empty"> <!-- example image -->
+                        </div>
+                        <div class="location-info-locations">
+                            <span class="location-title-locations">HoneyRise Hotel</span>
+                            <span class="location-details-locations">Looking for location</span>
+                            <span class="location-date-locations">-</span>
+                            <button class="status-button-locations status-inactive-locations">Inactive</button>
+                            <button class="toggle-menu-locations" onclick="toggleMenu('menu2')">Toggle Menu</button>
+                        </div>
+                        <ul class="menu-locations" id="menu2">
+                            <li>Nothing Yet - 0</li>
+                        </ul>
+                    </li>
+                    <li class="location-box-locations">
+                        <div class="image-box-locations">
+                            <img src="{{ url_for('static', filename='location2.jpg') }}" alt="Empty"> <!-- example image -->
+                        </div>
+                        <div class="location-info-locations">
+                            <span class="location-title-locations">HoneyRise Trading Outpost 1</span>
+                            <span class="location-details-locations">Looking for location</span>
+                            <span class="location-date-locations">-</span>
+                            <button class="status-button-locations status-inactive-locations">Inactive</button>
+                            <button class="toggle-menu-locations" onclick="toggleMenu('menu3')">Toggle Menu</button>
+                        </div>
+                        <ul class="menu-locations" id="menu3">
+                            <li class="villagerItem-locations">Eventually Villager Trade Items - 0</li>
+                        </ul>
+                    </li>
+                    <li class="info-box-locations">
+                        <div class="location-info-locations">
+                            <span class="info-locations">To buy an item highlighted in purple, visit the establishment and purchase it from a villager.</span>
+                            <span class="info-locations">To buy any other item, visit the location while Bent___Bread is online or buy it from the marketplace.</span>
+                        </div>
+                    </li>
+                    <!-- Add more locations as needed -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleMenu(menuId) {
+            var menu = document.getElementById(menuId);
+            if (menu.style.display === "none" || menu.style.display === "") {
+                menu.style.display = "block";
+            } else {
+                menu.style.display = "none";
+            }
+        }
+    </script>
+{% endblock %}
