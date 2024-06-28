@@ -20,10 +20,12 @@
                             <span class="location-details-locations">Located in Rivendell</span>
                             <span class="location-date-locations">First Opened 6/19/2024</span>
                             <button class="status-button-locations status-active-locations">Active</button>
-                            <button class="toggle-menu-locations" onclick="toggleMenu('menu1')">Toggle Menu</button>
+                            <button class="toggle-menu-locations" onclick="toggleMenu('menu1')">Toggle Info</button>
                         </div>
                         <ul class="menu-locations" id="menu1">
-                            <li>Honey - 3 Emeralds</li>
+                            <li>Open to the public</li>
+                            <li>Purpose: A showcase of HoneyRise architecture and creativity. A place to meet, trade and grab some honey</li>
+                            <li>Produces: Potions, Honey, Honeycomb</li>
                         </ul>
                     </li>
                     <li class="location-box-locations">
@@ -32,13 +34,32 @@
                         </div>
                         <div class="location-info-locations">
                             <span class="location-title-locations">HoneyRise Oasis</span>
-                            <span class="location-details-locations">Obsidian locked bunker located in Rivendell</span>
-                            <span class="location-date-locations">First Opened 4/15/2024</span>
+                            <span class="location-details-locations">Located in Rivendell</span>
+                            <span class="location-date-locations">First Operational 4/15/2024</span>
                             <button class="status-button-locations status-active-locations">Active</button>
-                            <button class="toggle-menu-locations" onclick="toggleMenu('menu5')">Toggle Menu</button>
+                            <button class="toggle-menu-locations" onclick="toggleMenu('menu5')">Toggle Info</button>
                         </div>
                         <ul class="menu-locations" id="menu5">
                             <li>Closed to the public</li>
+                            <li>Purpose: The most secure facility in Rivendell with a goal of repopulating the inner realms' villager population</li>
+                            <li>Produces: Villagers</li>
+                        </ul>
+                    </li>
+                    <li class="location-box-locations">
+                        <div class="image-box-locations">
+                            <img src="{{ url_for('static', filename='treeFarm.png') }}" alt="Empty"> <!-- example image -->
+                        </div>
+                        <div class="location-info-locations">
+                            <span class="location-title-locations">HoneyRise Tree Farm</span>
+                            <span class="location-details-locations">Located in the outskirts of Rivendell</span>
+                            <span class="location-date-locations">First Operational 6/28/2024</span>
+                            <button class="status-button-locations status-active-locations">Activate</button>
+                            <button class="toggle-menu-locations" onclick="toggleMenu('menu2')">Toggle Info</button>
+                        </div>
+                        <ul class="menu-locations" id="menu2">
+                            <li>Closed to the public</li>
+                            <li>Purpose: Grow and harvest trees for selling on the HoneyRise Martketplace, harvest saplings to populate the inner realm with rare trees</li>
+                            <li>Produces: Cherry wood, spruce wood, jungle wood, other wood</li>
                         </ul>
                     </li>
                     <li class="location-box-locations">
@@ -47,28 +68,15 @@
                         </div>
                         <div class="location-info-locations">
                             <span class="location-title-locations">HoneyRise Hotel</span>
-                            <span class="location-details-locations">Looking for location</span>
-                            <span class="location-date-locations">-</span>
-                            <button class="status-button-locations status-inactive-locations">Inactive</button>
-                            <button class="toggle-menu-locations" onclick="toggleMenu('menu2')">Toggle Menu</button>
-                        </div>
-                        <ul class="menu-locations" id="menu2">
-                            <li>Nothing Yet - 0</li>
-                        </ul>
-                    </li>
-                    <li class="location-box-locations">
-                        <div class="image-box-locations">
-                            <img src="{{ url_for('static', filename='location2.jpg') }}" alt="Empty"> <!-- example image -->
-                        </div>
-                        <div class="location-info-locations">
-                            <span class="location-title-locations">HoneyRise Trading Outpost 1</span>
-                            <span class="location-details-locations">Looking for location</span>
+                            <span class="location-details-locations">Under construction in Rivendell</span>
                             <span class="location-date-locations">-</span>
                             <button class="status-button-locations status-inactive-locations">Inactive</button>
                             <button class="toggle-menu-locations" onclick="toggleMenu('menu3')">Toggle Menu</button>
                         </div>
                         <ul class="menu-locations" id="menu3">
-                            <li class="villagerItem-locations">Eventually Villager Trade Items - 0</li>
+                            <li>Closed to the public until completion</li>
+                            <li>Purpose: To house villagers from the oasis</li>
+                            <li class="villagerItem-locations">Produces: Eventually villager trading will become available</li>
                         </ul>
                     </li>
                     <li class="info-box-locations">
